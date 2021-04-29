@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Explanations - Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.loli.net/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <script> 
+        $(function() {
+            $.getJSON("explanations.json",function(data){  
+                //https://cdn.jsdelivr.net/gh/TianZonglin/user-study-mdpi-repo2/gallery/explanations.json
+                function makeup(tname){
+                    let arr = eval('data.'+tname);
+                    let rows = Math.ceil(arr.length/(5*2));
+                    let tableset = "";
+                    for(let line = 0; line < rows; line++ ){
+                        let start_i = line*5*2;
+                        let str1,str2,str3;
+                        for(let i = 0; i < 5; i++){
+                            let subi = start_i+i*2;
+                            if(subi < arr.length){
+                                let imghref = "https://cdn.jsdelivr.net/gh/TianZonglin/";
+                                let idi = tname+""+subi;
+                                let tmp = arr[subi].split("\\")[2].split("-");
+                                let cate = arr[subi].split("\\")[2].split("-");
+                                cate.splice(-5,5);
+                                let wid = 200;//(parseInt($(".post-content").css('width').replace("px","")))/5-10;
+                                str1 +=`<td align="center" class="2D" data-src="${imghref+arr[subi]}">`
+                                      +`<div id="${idi}" class="modal" style="text-align:center;max-width: 85% !important;">`
+                                      +`<b>Comparison mode (Left:2D, Right:3D)</b><br>please use a bigger screen<br><br>`
+                                      +`<img style="border:solid 1px;height:${wid*3}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
+                                      +`<video height="${wid*3}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video></div>`
+                                      +`<a href="#${idi}" rel="modal:open"><img style="margin-top:15px;width:${wid}px" alt="" title="" src="${imghref+arr[subi]}"></a></td>`;
+                                str2 +=`<td align="center"><video  width="${wid}" height="" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video></td>`;
+                                str3 +=`<td align="center">${cate.join("-")}&nbsp;&nbsp;<span style="font-size:10px;color:#FC7E0F">`
+                                      +`${tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")},&nbsp;`
+                                      +`${tmp[tmp.length-2].replace("r","R=").replace("R","R=")}</span></td>`;
+                                
+                            }else{
+                                str1 += `<td align="center"></td>`;
+                                str2 += `<td align="center"></td>`;
+                                str3 += `<td align="center"></td>`;
+                            }
+                            
+                        }
+                        tableset += `<tr>${str1}</tr><tr>${str2}</tr><tr>${str3}</tr>`;
+                    }
+                    return tableset;
+                }
+                $("#CityPollution").html(makeup("CityPollution"));
+                $('.icon').css('cursor','pointer').click(function(){
+                    if($(this).attr('src').indexOf("-.svg")>0){
+                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg');
+                        $(this).parent().parent().parent().next().fadeToggle();
+                    }else if($(this).attr('src').indexOf("+.svg")>0){
+                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg');
+                        if($(this).attr('count')=="true"){
+                            console.log("install");
+                            let currenty = $(this).parent().parent().parent().next();
+                            currenty.html(makeup(currenty.attr('id')));
+                            $(this).attr('count',"false")
+                        }else{
+                            $(this).parent().parent().parent().next().fadeToggle();
+                        }
+                    }
+                });
+            })
+        });
+
+    </script>
+ 
+    <style>
+        .icon {
+            display: inline-block !important;
+            margin-bottom: 2px !important;
+            vertical-align: middle; 
+            height:18px;
+        }
+        th, td {
+            padding: 6px !important;
+        }
+        body {
+            max-width: 1100px;
+        }
+ 
+        .post a:visited {
+            color: #FC7E0F !important;
+        }
+    </style>
+</head>
+
+<body class="post-template">
+    <header class="main-header">
+        <div class="main-header-content">
+            <h1 class="blog-title">
+                <a href="../gallery/">
+
+                    Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
+
+                </a>
+            </h1>
+            <h2 class="blog-description"></h2>
+        </div>
+
+        <div class="nav">
+            <a class="nav-" role="presentation" href="datasets.html">Datasets</a>
+            <a class="nav-" role="presentation" href="experiment.html">Experiment</a>
+            <a class="nav-" role="presentation" href="measurement.html">Measurement</a>
+            <a class="nav-" role="presentation" href="overview.html">Overview</a>
+            <a class="nav-" role="presentation" href="explanations.html">Explanations</a>
+        </div>
+    </header>
+    <main class="content" role="main">
+        <article class="post">
+            <header class="post-header">
+                <h3 class="post-title">Explanations of projections for all datasets</h3>
+
+            </header>
+            <section class="post-content">
+                <p><a href="#todo">S = Splat Radius, R = Neighborhood Size</a></p>
+                <table>
+                    <thead><tr>
+                        <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="CityPollution"></tbody>  
+                </table>
+                <table>
+                    <thead><tr>
+                        <th align="center">Wine &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="Wine"></tbody>  
+                </table>
+
+                <table>
+                    <thead><tr>
+                        <th align="center">AirQuality &nbsp;<img class="icon"  count="true"src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="AirQuality"></tbody>
+                </table>
+                <table>
+                    <thead><tr>
+                        <th align="center">Concrete &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="Concrete"></tbody>  
+                </table>
+                <table>
+                    <thead><tr>
+                        <th align="center">Defaultcc &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="Defaultcc"></tbody>  
+                </table>
+                <table>
+                    <thead><tr>
+                        <th align="center">Software &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="Software"></tbody>
+                </table>
+                <table>
+                    <thead><tr>
+                        <th align="center">BreastCancer &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
+                    </tr></thead>
+                    <tbody id="WisconsinBreastCancer"></tbody>  
+                </table>
+
+            </section>
+ 
+        </article>
+    </main>
+    <footer class="site-footer">
+        <a target="_blank" style="text-decoration:none;" href="https://vig.science.uu.nl/">UU & VIG</a>
+    </footer>
+</body>
+</html>

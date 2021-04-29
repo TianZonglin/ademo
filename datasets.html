@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Datasets - Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.loli.net/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <style>
+        .post a:visited {
+            color: #FC7E0F !important;
+        }
+    </style>
+    <script>
+        $(function() {
+            $.getJSON("datasets.json",function(data){ 
+                //https://cdn.jsdelivr.net/gh/TianZonglin/user-study-mdpi-repo2/gallery/datasets.json
+                console.log(data);
+                let textable = "";
+                $("#modal").html("");
+                for(let i = 0; i < data.length; i++ ){
+                    let obj = data[i];
+                    let str = "";
+                    let idi = "id"+i;
+                    str += `<td><a target="_blank" href="${obj.url}">${obj.name}</a></td>`;
+                    str += `<td><span>${obj.feature}</span></td>`;
+                    str += `<td><span>${obj.numbers.attributes}</span></td>`;
+                    str += `<td><span>${obj.numbers.instances}</span></td>`;
+                    str += `<td><a href="#${idi}" rel="modal:open">more details</a></td>`;
+                    str += `<td><a target="_blank" href="${obj.download.url}">${obj.download.type}</a></td>`;
+                    let dvi = `<div id="${idi}" class="modal" style="text-align:left;max-width: 60% !important;font-size:15px">`
+                                      +`<b>Description</b><br><span>${obj.intro}</span><br><br><b>Attributes</b><br>`;
+                    if(obj.attrs.type.indexOf("table")>-1){
+                        let splt = obj.attrs.type.split("@")[1];
+                        let stable = "";
+                        for(let j = 0; j < obj.attrs.content.length; j++ ){
+                            let tmp = "";
+                            let arr = obj.attrs.content[j].split(splt);
+                            if(j == 0){
+                                for(let k = 0; k < arr.length; k++ )
+                                    tmp += `<td style="line-height:10px;"><b>${arr[k]}</b></td>`;
+                            }else{
+                                for(let k = 0; k < arr.length; k++ )
+                                    tmp += `<td style="line-height:10px;">${arr[k]}</td>`;
+                            }
+                            stable += `<tr>${tmp}</tr>`;
+                        }
+                        dvi += `<table style="margin:0px">${stable}</table></div>`;
+                    }else if(obj.attrs.type.indexOf("list")>-1){
+                        let stable = "";
+                        for(let j = 0; j < obj.attrs.content.length; j++ ){
+                            stable += `<li>${obj.attrs.content[j]}</li>`;
+                        }
+                        dvi += `<ul style="margin:0px">${stable}</ul><br><b>SourceURL</b><br><a traget="_blank" href="${obj.url}">${obj.url}</a><br></div>`;
+                    }                 
+                    textable += `<tr>${str}<tr>`;
+                    $("#modal").append(dvi);
+                }
+                $("#tab").html(textable);
+            });
+        })  
+    </script>
+</head>
+
+<body style="max-width: 1100px;" class="post-template">
+    <header class="main-header">
+        <div class="main-header-content">
+            <h1 class="blog-title">
+                <a href="../gallery/">
+                    Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
+                </a>
+            </h1>
+            <h2 class="blog-description"></h2>
+        </div>
+        <div class="nav">
+            <a class="nav-" role="presentation" href="datasets.html">Datasets</a>
+            <a class="nav-" role="presentation" href="experiment.html">Experiment</a>
+            <a class="nav-" role="presentation" href="measurement.html">Measurement</a>
+            <a class="nav-" role="presentation" href="overview.html">Overview</a>
+            <a class="nav-" role="presentation" href="explanations.html">Explanations</a>
+        </div>
+    </header>
+
+
+    <main class="content" role="main">
+        <article class="post">
+            <header class="post-header">
+                <h3 class="post-title">Datasets</h3>
+
+            </header>
+            <section class="post-content">
+
+                <p><a target="_blank" href="https://drive.google.com/file/d/1r9fodG3tdWYc3hGCkpgVrtTyijf9poPo/view?usp=sharing">All datasets, in csv formats</a></p>
+
+                <h5 id="individual-datasets">Individual datasets</h5>
+                <div id="modal"> </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dataset</th>
+                            <th>Category / Task</th>
+                            <th>Instances</th>
+                            <th>Dimensions</th>
+                            <th>Attributions</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tab"> </tbody>
+                </table>
+ 
+            </section>
+ 
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <a target="_blank" style="text-decoration:none;" href="https://vig.science.uu.nl/">UU & VIG</a>
+    </footer>
+
+
+
+</body>
+
+</html>

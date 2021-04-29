@@ -1,0 +1,1247 @@
+[{
+    "dataset": "AirQuality",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": "Projected space tiny and points seem to overlap. Continous representation cannot determine a sane blob size (it checks average first nn distance, overlapping points cause trouble)"
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": "See note on LLE"
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "Projected into _very_ tight clusters that are spaced far appart. Explanations give everything very low confidence (e.i. black)"
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "Image included in the dropbox, even thought the results are poor"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": "-"
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": "Projected into ~25 overlapping points. Explanations fail and continous representation will cannot determine a sane blob size (it checks average first nn distance, overlapping points cause trouble)"
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "√",
+        "extra": "Projected space is _tiny_, tool ill equiped to render the 3D continous scene. Discreet does work."
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "√",
+        "extra": "Case against 3D projections "
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "√",
+        "extra": "Case against 3D Projection. We have an eclosing region that occludes all others."
+        }
+    ]
+},{
+    "dataset": "CityPollution",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D,  2D is ok"
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": "Projected into large space but projections concentrated in tiny space and not in the central position"
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well (can see nothing) in 3D, but 2D is ok."
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "tiny space, overlapping"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "-",
+        "extra": ""
+        }
+    ]
+},{
+    "dataset": "Concrete",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "×",
+        "extra": "overlapping heavily"
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": "tiny space, zoom not working well in 3D"
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": "overlapping heavily in 2D and 3D"
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "overlapping heavily"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": "overlapping heavily in 2D and 3D"
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "×",
+        "extra": "tiny space, zoom not working well in 3D"
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "×",
+        "extra": "overlapping heavily"
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "√",
+        "extra": ""
+        }
+    ]
+},{
+    "dataset": "Defaultcc",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "×",
+        "extra": "overlapping heavily, tiny sturcture"
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": "tiny space"
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": "overlapping heavily, tiny sturcture"
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": "overlapping, tiny sturcture"
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "can't see anything in 2D and 3D"
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "tiny space, zoom not working well in 3D, 2D is ok"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": "Z: can't see anything; G: See the screenshot folder. explanation is bad but visible when using the discreet setting. Z: Got it"
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "-",
+        "extra": "can't see anything in 2D and 3D"
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "×",
+        "extra": "tiny space, overlapping, zoom not working in 3D, 2D is ok"
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "-",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "-",
+        "extra": ""
+        }
+    ]
+},{
+    "dataset": "Software",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "×",
+        "extra": "too small or too large in 3D"
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": "isn't good in 2D, and can't see any point in 3D"
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "good in 2D, but can't see any point in 3D"
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": "good in 2D, but not very good in 3D"
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "√",
+        "extra": "few points can be seen both in 2D and 3D"
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "√",
+        "extra": "not very good in 3D"
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "√",
+        "extra": ""
+        }
+    ]
+},{
+    "dataset": "Winequality",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "×",
+        "extra": ""
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "√",
+        "extra": "Projection width is tiny again, causing trouble with the render and computation."
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "Overlapping sparse points"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": "projected into 10 overlapping points alligned with the x/z axis."
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "√",
+        "extra": "Projected space is _tiny_, tool ill equiped to render the 3D continous scene. Discreet does work."
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "√",
+        "extra": "Good case _for_ 3D "
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "√",
+        "extra": ""
+        }
+    ]
+},{
+    "dataset": "WBreastCancer",
+    "result": [{ 
+        "algo": "t-distributed Stochastic Neighbor Embedding",
+        "short": "TSNE",
+        "rank": "1",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Uniform Manifold Approximation and Projection",
+        "short": "UMAP",
+        "rank": "2",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Autoencoder",
+        "short": "AE",
+        "rank": "3",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (sigmoid kernel)",
+        "short": "K-PCA-S",
+        "rank": "4",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (polynomial kernel)",
+        "short": "K-PCA-R",
+        "rank": "5",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Principal Component Analysis",
+        "short": "PCA",
+        "rank": "6",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Kernel PCA (rbf kernel)",
+        "short": "K-PCA-P",
+        "rank": "7",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Landmark MDS",
+        "short": "L-MDS",
+        "rank": "8",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Fast ICA",
+        "short": "F-ICA",
+        "rank": "9",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Sparse PCA",
+        "short": "S-PCA",
+        "rank": "10",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Incremental PCA",
+        "short": "I-PCA",
+        "rank": "11",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Isomap",
+        "short": "ISO",
+        "rank": "12",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Truncated SVD (aka Latent Semantic Analysis)",
+        "short": "T-SVD",
+        "rank": "13",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonnegative Matrix Factorization",
+        "short": "NMF",
+        "rank": "14",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locally Linear Embedding",
+        "short": "LLE",
+        "rank": "15",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Modified LLE",
+        "short": "M-LLE",
+        "rank": "16",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Factor Analysis",
+        "short": "FA",
+        "rank": "17",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Locality Preserving Projections",
+        "short": "LPP",
+        "rank": "18",
+        "mark": "×",
+        "extra": "tiny structure, zoom working not well in 3D"
+    },{ 
+        "algo": "Sparse Random Projection",
+        "short": "S-RP",
+        "rank": "19",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Gaussian Random Projection",
+        "short": "G-RP",
+        "rank": "20",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Hessian LLE",
+        "short": "H-LLE",
+        "rank": "21",
+        "mark": "×",
+        "extra": "overplapping -> several points"
+    },{ 
+        "algo": "Neighborhood Preserving Embedding",
+        "short": "NPE",
+        "rank": "22",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Metric MDS",
+        "short": "MDS",
+        "rank": "23",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Local Tangent Space Alignment (variant of LLE)",
+        "short": "LTSA",
+        "rank": "24",
+        "mark": "×",
+        "extra": "overlapping -> one big point"
+    },{ 
+        "algo": "Laplacian Eigenmaps (aka Spectral Embedding)",
+        "short": "LE",
+        "rank": "25",
+        "mark": "×",
+        "extra": "tiny structure, zoom working not well"
+    },{ 
+        "algo": "Linear LTSA",
+        "short": "L-LTSA",
+        "rank": "26",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Diffusion Maps",
+        "short": "DM",
+        "rank": "27",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Stochastic Proximity Embedding",
+        "short": "SPE",
+        "rank": "28",
+        "mark": "√",
+        "extra": ""
+    },{ 
+        "algo": "Nonmetric MDS",
+        "short": "N-MDS",
+        "rank": "29",
+        "mark": "√",
+        "extra": ""
+        }
+    ]
+}]
