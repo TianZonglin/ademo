@@ -33,10 +33,10 @@
                 }
                 let tmp = data[0].result;
                 for(let j = 0; j < tmp.length; j++ ){
-                    let row = `<td><a class="simptip-position-top" data-tooltip="${tmp[j].algo}" style="cursor:pointer">${tmp[j].short}</a></td><td style="background-color:#${color[j]}a8">${tmp[j].rank}</td>`;
+                    let row = `<td><a class="simptip-position-top simptip-smooth" data-tooltip="${tmp[j].algo}" style="cursor:pointer">${tmp[j].short}</a></td><td style="background-color:#${color[j]}a8">${tmp[j].rank}</td>`;
                     for(let k = 0; k < data.length; k++ ){
                         if(data[k].result[j].extra!=""){
-                            row += `<td><a style="cursor:pointer" class="simptip-position-top" data-tooltip="${data[k].result[j].extra}">${data[k].result[j].mark}</a></td>`;
+                            row += `<td><a style="cursor:pointer" class="simptip-position-top simptip-smooth" data-tooltip="${data[k].result[j].extra}">${data[k].result[j].mark}</a></td>`;
                         }else{
                             row += `<td>${data[k].result[j].mark}</td>`;
                         }
@@ -67,7 +67,7 @@
     <header class="main-header">
         <div class="main-header-content">
             <h1 class="blog-title">
-                <a href="../gallery/">
+                <a href="/">
                     Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
                 </a>
             </h1>

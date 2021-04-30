@@ -21,6 +21,12 @@
         .post a:visited {
             color: #FC7E0F !important;
         }
+        .post-header {
+            margin-bottom: 0px !important;
+        }
+        body{
+            line-height: normal !important;
+        }
     </style>
 </head>
 
@@ -28,7 +34,7 @@
     <header class="main-header">
         <div class="main-header-content">
             <h1 class="blog-title">
-                <a href="../gallery/">
+                <a href="/">
 
                     Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
 
@@ -50,13 +56,19 @@
     <main class="content" role="main">
         <article class="post">
             <header class="post-header">
-                <h3 class="post-title">Measurement</h3>
+                <h3 class="post-title">Measurement</h3><br>
 
             </header> 
             <section class="post-content">
  
-                <h4 id="how-to-run-the-experiment">All explanations have been created using the projection exlanatory tool available <a href="https://git.science.uu.nl/vig/mscprojects/Pointctl">here</a> !</h4>
- 
+                <img  style="max-width: 1100px;" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/ranking1.jpg"/>
+                <div style="text-align: center;font-size: 15px;">
+                    Quality metrics per projection technique (rows), dataset (colors), and projection dimension (2D vs 3D, second column),<br>sorted ascendingly on technique trustworthiness.
+                </div><br>
+                <style>h5{margin-top: 10px !important;}</style>
+                <h5 id="how-to-run-the-experiment">For every dataset, we mainly computed <i>sparsity_ratio;</i>&nbsp;&nbsp; see <a target="_blank" href="https://github.com/TianZonglin/user-study-mdpi-repo2/raw/main/dataset_metrics.csv">dataset_metrics.csv</a></h5>
+                <h5 id="how-to-run-the-experiment">For each kind of projection, we computed <i>n_components, trustworthiness, continuity, shepard_correlation, and normalized_stress.</i>&nbsp;&nbsp;see <a target="_blank" href="https://github.com/TianZonglin/user-study-mdpi-repo2/raw/main/metrics.csv">metrics_all.csv</a></h5>
+                
             </section>
  
         </article>

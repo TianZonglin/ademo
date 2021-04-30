@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.loli.net/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simptip@1.0.4/simptip.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -38,17 +39,22 @@
                                 let cate = arr[subi].split("\\")[2].split("-");
                                 cate.splice(-5,5);
                                 let wid = 200;//(parseInt($(".post-content").css('width').replace("px","")))/5-10;
+                                let dld = arr[subi+1].replace("repo1\\","repo1\\raw\\main\\").replace("repo2\\","repo2\\raw\\main\\");
                                 str1 +=`<td align="center" class="2D" data-src="${imghref+arr[subi]}">`
-                                      +`<div id="${idi}" class="modal" style="text-align:center;max-width: 85% !important;">`
-                                      +`<b>Comparison mode (Left:2D, Right:3D)</b><br>please use a bigger screen<br><br>`
-                                      +`<img style="border:solid 1px;height:${wid*3}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
-                                      +`<video height="${wid*3}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video></div>`
+                                      +`<div id="${idi}" class="modal" style="text-align:center;max-width: 80% !important;min-width: 900px !important;">`
+                                      +`<b>Comparison mode (left:2D, right:3D)</b><br><a download="${arr[subi+1]}" style="font-size:15px;" href="${"https://github.com/TianZonglin/"+dld}">download video</a><br><br>`
+                                      +`<img style="border:solid 1px;height:${wid*2.5}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
+                                      +`<video height="${wid*2.5}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video><br><br></div>`
                                       +`<a href="#${idi}" rel="modal:open"><img style="margin-top:15px;width:${wid}px" alt="" title="" src="${imghref+arr[subi]}"></a></td>`;
                                 str2 +=`<td align="center"><video  width="${wid}" height="" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video></td>`;
-                                str3 +=`<td align="center">${cate.join("-")}&nbsp;&nbsp;<span style="font-size:10px;color:#FC7E0F">`
-                                      +`${tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")},&nbsp;`
-                                      +`${tmp[tmp.length-2].replace("r","R=").replace("R","R=")}</span></td>`;
                                 
+ 
+                                str3 +=`<td align="center"><span class="simptip-position-right simptip-smooth" data-tooltip="
+                                    ${tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")}, 
+                                    ${tmp[tmp.length-2].replace("r","R=").replace("R","R=")}">${cate.join("-")}</span>&nbsp;&nbsp;&nbsp;<a download="${arr[subi+1]}" style="font-size:13px;float: right;margin-right: 5px;" href="${"https://github.com/TianZonglin/"+dld}">download video</a></td>`;             
+
+
+
                             }else{
                                 str1 += `<td align="center"></td>`;
                                 str2 += `<td align="center"></td>`;
@@ -99,6 +105,7 @@
         .post a:visited {
             color: #FC7E0F !important;
         }
+    
     </style>
 </head>
 
@@ -106,7 +113,7 @@
     <header class="main-header">
         <div class="main-header-content">
             <h1 class="blog-title">
-                <a href="../gallery/">
+                <a href="/">
 
                     Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
 
@@ -126,11 +133,11 @@
     <main class="content" role="main">
         <article class="post">
             <header class="post-header">
-                <h3 class="post-title">Explanations of projections for all datasets</h3>
+                <h3 class="post-title">Explanations of projections for all datasets (2D & 3D)</h3>
 
             </header>
             <section class="post-content">
-                <p><a href="#todo">S = Splat Radius, R = Neighborhood Size</a></p>
+                <p><a>&nbsp;S = Splat Radius, R = Neighborhood Size</a></p>
                 <table>
                     <thead><tr>
                         <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg"/></th>

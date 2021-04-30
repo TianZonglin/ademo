@@ -39,6 +39,7 @@
                     str += `<td><span>${obj.numbers.instances}</span></td>`;
                     str += `<td><a href="#${idi}" rel="modal:open">more details</a></td>`;
                     str += `<td><a target="_blank" href="${obj.download.url}">${obj.download.type}</a></td>`;
+                    str += `<td><a href="${obj.download.projection}">csv</a></td>`;
                     let dvi = `<div id="${idi}" class="modal" style="text-align:left;max-width: 60% !important;font-size:15px">`
                                       +`<b>Description</b><br><span>${obj.intro}</span><br><br><b>Attributes</b><br>`;
                     if(obj.attrs.type.indexOf("table")>-1){
@@ -77,7 +78,7 @@
     <header class="main-header">
         <div class="main-header-content">
             <h1 class="blog-title">
-                <a href="../gallery/">
+                <a href="/">
                     Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
                 </a>
             </h1>
@@ -100,12 +101,9 @@
 
             </header>
             <section class="post-content">
-
-                <p><a target="_blank" href="https://drive.google.com/file/d/1r9fodG3tdWYc3hGCkpgVrtTyijf9poPo/view?usp=sharing">All datasets, in csv formats</a></p>
-
                 <h5 id="individual-datasets">Individual datasets</h5>
                 <div id="modal"> </div>
-                <table>
+                <table style="font-size:16px">
                     <thead>
                         <tr>
                             <th>Dataset</th>
@@ -113,7 +111,8 @@
                             <th>Instances</th>
                             <th>Dimensions</th>
                             <th>Attributions</th>
-                            <th>Download</th>
+                            <th>Sourcedata</th>
+                            <th>Projections(<a href="overview.html">×29</a>)</th>
                         </tr>
                     </thead>
 
