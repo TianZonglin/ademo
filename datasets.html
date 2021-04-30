@@ -56,7 +56,7 @@
                             }
                             stable += `<tr>${tmp}</tr>`;
                         }
-                        dvi += `<table style="margin:0px">${stable}</table></div>`;
+                        dvi += `<table style="margin:0px">${stable}</table><br><b>SourceURL</b><br><a traget="_blank" href="${obj.url}">${obj.url}</a><br></div>`;
                     }else if(obj.attrs.type.indexOf("list")>-1){
                         let stable = "";
                         for(let j = 0; j < obj.attrs.content.length; j++ ){
