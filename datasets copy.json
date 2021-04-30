@@ -7,7 +7,7 @@
     "numbers": {
         "instances": 4177,
         "attributes": 8
-    },
+    }, 
     "download": {
         "type": "data + names",
         "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/"

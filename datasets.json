@@ -8,7 +8,7 @@
         "instances": 9358,
         "attributes": 15
     },
-    "download": {
+    "download": { 
         "type": "csv + xlsx",
         "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00360/",
         "projection": "https://github.com/TianZonglin/user-study-mdpi-repo2/raw/main/projections/AirQuality_projections.zip"
