@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,8 +38,7 @@
                             row += `<td><a style="cursor:pointer" class="simptip-position-top simptip-smooth" data-tooltip="${data[k].result[j].extra}">${data[k].result[j].mark}</a></td>`;
                         }else{
                             row += `<td>${data[k].result[j].mark}</td>`;
-                        }
-                        
+                        } 
                     }
                      tbody += `<tr>${row}</tr>`;
                 }
@@ -48,7 +46,6 @@
                 $("#tbody").html(tbody);
             })
         })
- 
     </script>
     <style>
         th, td {
@@ -56,7 +53,6 @@
             text-align: center !important;
             border-bottom: #EFEFEF 1px solid;
         }  
- 
         .post a:visited {
             color: #FC7E0F !important;
         }
@@ -73,7 +69,6 @@
             </h1>
             <h2 class="blog-description"></h2>
         </div>
-
         <div class="nav">
             <a class="nav-" role="presentation" href="datasets.html">Datasets</a>
             <a class="nav-" role="presentation" href="experiment.html">Experiment</a>
@@ -82,7 +77,6 @@
             <a class="nav-" role="presentation" href="explanations.html">Explanations</a>
         </div>
 </header>
-
 <main class="content" role="main">
   <article class="post">
     <header class="post-header">
@@ -93,18 +87,14 @@
             <thead id="thead"></thead>
             <tbody id="tbody"></tbody>
         </table>
- 
         <span>[<b>√</b>]&nbsp;success,&nbsp;</span>
         <span>[<b>×</b>]&nbsp;failed to get explanation,&nbsp;</span>
         <span>[<b>&nbsp;-&nbsp;</b>]&nbsp;without projection</span><br>
- 
     </section>
 </article>
 </main>
-
 <footer class="site-footer">
 <a target="_blank" style="text-decoration:none;" href="https://vig.science.uu.nl/">UU & VIG</a>
 </footer>
-
 </body>
 </html>
