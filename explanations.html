@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -43,7 +43,7 @@
                                       +`<img style="border:solid 1px;height:${wid*2.5}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
                                       +`<video height="${wid*2.5}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video><br><br></div>`
                                       +`<a href="#${idi}" rel="modal:open"><img style="margin-top:15px;width:${wid}px" alt="" title="" src="${imghref+arr[subi]}"></a></td>`;
-                                str2 +=`<td align="center"><video  width="${wid}" height="" src="${imghref+arr[subi+1]}" controls loop></video></td>`;
+                                str2 +=`<td align="center"><video  width="${wid}" height="" src="${imghref+arr[subi+1]}" controls loop><source src="${imghref+arr[subi+1]}" media=""></video></td>`;
                                 str3 +=`<td align="center"><span style="cursor:pointer" class="simptip-position-right simptip-smooth" data-tooltip="
                                     ${tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")}, 
                                     ${tmp[tmp.length-2].replace("r","R=").replace("R","R=")}">${cate.join("-")}</span>&nbsp;&nbsp;&nbsp;<a download="${arr[subi+1]}" style="font-size:13px;float: right;margin-right: 5px;" href="${"https://github.com/TianZonglin/"+dld}">download video</a></td>`;             
