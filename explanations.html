@@ -17,7 +17,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="//api.html5media.info/1.2.2/html5media.min.js"></script>
     <script> 
+
         $(function() {
+            function IECheck(){
+                var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+                var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+                var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+                var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1; //判断是否IE11浏览器
+                if(isIE) {
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                    reIE.test(userAgent);
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+                    if(fIEVersion == 7) {
+                        return 7;
+                    } else if(fIEVersion == 8) {
+                        return 8;
+                    } else if(fIEVersion == 9) {
+                        return 9;
+                    } else if(fIEVersion == 10) {
+                        return 10;
+                    } else {
+                        return 6;//IE版本<=7
+                    }   
+                } else if(isIE11) {
+                    return 11; //IE11  
+                }else{
+                    return -1;//不是ie浏览器
+                }
+            }
+            if(IECheck()!=-1){
+                $(".icon").css("margin-left","2px !important")
+            }
+            console.log(IECheck());
             $.getJSON("explanations.json",function(data){  
                 //https://cdn.jsdelivr.net/gh/TianZonglin/user-study-mdpi-repo2/gallery/explanations.json
                 function makeup(tname){
@@ -37,33 +68,31 @@
                                 cate.splice(-5,5);
                                 let wid = 200;//(parseInt($(".post-content").css('width').replace("px","")))/5-10;
                                 let dld = arr[subi+1].replace("repo1\\","repo1\\raw\\main\\").replace("repo2\\","repo2\\raw\\main\\");
-                                str1 +=`<td align="center" class="2D" data-src="${imghref+arr[subi]}">`
-                                      +`<div id="${idi}" class="modal" style="text-align:center;max-width: 80% !important;min-width: 900px !important;">`
-                                      +`<b>Comparison View (left:2D, right:3D)</b><br><a download="${arr[subi+1]}" style="font-size:15px;color:#FC7E0F" href="${"https://github.com/TianZonglin/"+dld}">download this video</a><br><br>`
-                                      +`<img style="border:solid 1px;height:${wid*2.5}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
-                                      +`<video height="${wid*2.5}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video><br><br></div>`
-                                      +`<a href="#${idi}" rel="modal:open"><img style="margin-top:15px;width:${wid}px" alt="" title="" src="${imghref+arr[subi]}"></a></td>`;
-                                str2 +=`<td align="center"><video  width="${wid}" height="" src="${imghref+arr[subi+1]}" controls loop><source src="${imghref+arr[subi+1]}" media=""></video></td>`;
-                                str3 +=`<td align="center"><span style="cursor:pointer" class="simptip-position-right simptip-smooth" data-tooltip="
-                                    ${tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")}, 
-                                    ${tmp[tmp.length-2].replace("r","R=").replace("R","R=")}">${cate.join("-")}</span>&nbsp;&nbsp;&nbsp;<a download="${arr[subi+1]}" style="font-size:13px;float: right;margin-right: 5px;" href="${"https://github.com/TianZonglin/"+dld}">download video</a></td>`;             
+                                str1 +='<td align="center" class="2D" data-src="'+imghref+arr[subi]+'">'
+                                      +'<div id="'+idi+'" class="modal" style="text-align:center;max-width: 80% !important;min-width: 900px !important;">'
+                                      +'<b>Comparison View (left:2D, right:3D)</b><br><a download="'+arr[subi+1]+'" style="font-size:15px;color:#FC7E0F" href="https://github.com/TianZonglin/'+dld+'">download this video</a><br><br>'
+                                      +'<img style="border:solid 1px;height:'+wid*2.5+'px" alt="" title="" src="'+imghref+arr[subi]+'">&nbsp;&nbsp;&nbsp;'
+                                      +'<video height="'+wid*2.5+'" style="border:solid 1px;" controls loop><source src="'+imghref+arr[subi+1]+'" type="video/mp4">Your browser does not support the video tag.</video><br><br></div>'
+                                      +'<a href="#'+idi+'" rel="modal:open"><img style="margin-top:15px;width:'+wid+'px" alt="" title="" src="'+imghref+arr[subi]+'"></a></td>';
+                                str2 +='<td align="center"><video  width="'+wid+'" height="" src="'+imghref+arr[subi+1]+'" controls loop><source src="'+imghref+arr[subi+1]+'" media=""></video></td>';
+                                str3 +='<td align="center"><span style="cursor:pointer" class="simptip-position-right simptip-smooth" data-tooltip="'+tmp[tmp.length-3].replace("s","S=").replace("S","S=").replace("==","=")+', '+tmp[tmp.length-2].replace("r","R=").replace("R","R=")+'">'+cate.join("-")+'</span>&nbsp;&nbsp;&nbsp;<a download="'+arr[subi+1]+'" style="font-size:13px;float: right;margin-right: 5px;" href="https://github.com/TianZonglin/'+dld+'">download video</a></td>';             
                             }else{
-                                str1 += `<td align="center"></td>`;
-                                str2 += `<td align="center"></td>`;
-                                str3 += `<td align="center"></td>`;
+                                str1 += '<td align="center"></td>';
+                                str2 += '<td align="center"></td>';
+                                str3 += '<td align="center"></td>';
                             } 
                         } 
-                        tableset += `<tr>${str1}</tr><tr>${str2}</tr><tr>${str3}</tr>`;
+                        tableset += '<tr>'+str1+'</tr><tr>'+str2+'</tr><tr>'+str3+'</tr>';
                     }
                     return tableset;
                 }
                 $("#CityPollution").html(makeup("CityPollution"));
                 $('.icon').css('cursor','pointer').click(function(){
-                    if($(this).attr('src').indexOf("-.svg")>0){
-                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg');
+                    if($(this).attr('src').indexOf("20210504004141.png")>0){
+                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png');
                         $(this).parent().parent().parent().next().fadeToggle();
-                    }else if($(this).attr('src').indexOf("+.svg")>0){
-                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg');
+                    }else if($(this).attr('src').indexOf("20210504004338.png")>0){
+                        $(this).attr('src','https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004141.png');
                         if($(this).attr('count')=="true"){
                             console.log("install");
                             let currenty = $(this).parent().parent().parent().next();
@@ -93,6 +122,7 @@
         .post a:visited {
             color: #FC7E0F !important;
         }
+ 
     </style>
 </head>
 
@@ -120,53 +150,55 @@
                 <h3 class="post-title">Explanations of projections for all datasets (2D & 3D)</h3>
             </header>
             <section class="post-content">
-                We recommend a recent version of Chrome to play the videos. Alternatively, you can download all videos and play them locally<br>
+                <div id="heady">
+                We use a free CDN service to host the videos, if they can't be played in your browser, then you can download all videos and play them locally.<br>
+                </div>
                 <span style="color:#FC7E0F">Note: S = Splat Radius, R = Neighborhood Size</span>
                 <table>
                     <thead><tr>
-                        <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg"/></th>
+                        <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004141.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="CityPollution"></tbody>  
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">Wine &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">Wine &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="Wine"></tbody>  
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">AirQuality &nbsp;<img class="icon"  count="true"src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">AirQuality &nbsp;<img class="icon"  count="true"src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="AirQuality"></tbody>
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">Concrete &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">Concrete &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="Concrete"></tbody>  
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">Defaultcc &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">Defaultcc &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="Defaultcc"></tbody>  
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">Software &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">Software &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="Software"></tbody>
                 </table>
                 <table>
                     <thead><tr>
-                        <th align="center">BreastCancer &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/+.svg"/></th>
+                        <th align="center">BreastCancer &nbsp;<img class="icon"  count="true" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004338.png"/></th>
                         <th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th>
                     </tr></thead>
                     <tbody id="WisconsinBreastCancer"></tbody>  

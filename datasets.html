@@ -30,15 +30,15 @@
                     let obj = data[i];
                     let str = "";
                     let idi = "id"+i;
-                    str += `<td><a target="_blank" href="${obj.url}">${obj.name}</a></td>`;
-                    str += `<td><span>${obj.feature}</span></td>`;
-                    str += `<td><span>${obj.numbers.attributes}</span></td>`;
-                    str += `<td><span>${obj.numbers.instances}</span></td>`;
-                    str += `<td><a href="#${idi}" rel="modal:open">more details</a></td>`;
-                    str += `<td><a target="_blank" href="${obj.download.url}">${obj.download.type}</a></td>`;
-                    str += `<td><a href="${obj.download.projection}">csv</a></td>`;
-                    let dvi = `<div id="${idi}" class="modal" style="text-align:left;max-width: 60% !important;font-size:15px">`
-                                      +`<b>Description</b><br><span>${obj.intro}</span><br><br><b>Attributes</b><br>`;
+                    str += '<td><a target="_blank" href="'+obj.url+'">'+obj.name+'</a></td>';
+                    str += '<td><span>'+obj.feature+'</span></td>';
+                    str += '<td><span>'+obj.numbers.attributes+'</span></td>';
+                    str += '<td><span>'+obj.numbers.instances+'</span></td>';
+                    str += '<td><a href="#'+idi+'" rel="modal:open">more details</a></td>';
+                    str += '<td><a target="_blank" href="'+obj.download.url+'">'+obj.download.type+'</a></td>';
+                    str += '<td><a href="'+obj.download.projection+'">csv</a></td>';
+                    let dvi = '<div id="'+idi+'" class="modal" style="text-align:left;max-width: 60% !important;font-size:15px">'
+                                      +'<b>Description</b><br><span>'+obj.intro+'</span><br><br><b>Attributes</b><br>';
                     if(obj.attrs.type.indexOf("table")>-1){
                         let splt = obj.attrs.type.split("@")[1];
                         let stable = "";
@@ -47,22 +47,22 @@
                             let arr = obj.attrs.content[j].split(splt);
                             if(j == 0){
                                 for(let k = 0; k < arr.length; k++ )
-                                    tmp += `<td style="line-height:10px;"><b>${arr[k]}</b></td>`;
+                                    tmp += '<td style="line-height:10px;"><b>'+arr[k]+'</b></td>';
                             }else{
                                 for(let k = 0; k < arr.length; k++ )
-                                    tmp += `<td style="line-height:10px;">${arr[k]}</td>`;
+                                    tmp += '<td style="line-height:10px;">'+arr[k]+'</td>';
                             }
-                            stable += `<tr>${tmp}</tr>`;
+                            stable += '<tr>'+tmp+'</tr>';
                         }
-                        dvi += `<table style="margin:0px">${stable}</table></div>`;
+                        dvi += '<table style="margin:0px">'+stable+'</table></div>';
                     }else if(obj.attrs.type.indexOf("list")>-1){
                         let stable = "";
                         for(let j = 0; j < obj.attrs.content.length; j++ ){
-                            stable += `<li>${obj.attrs.content[j]}</li>`;
+                            stable += '<li>'+obj.attrs.content[j]+'</li>';
                         }
-                        dvi += `<ul style="margin:0px">${stable}</ul><br><b>SourceURL</b><br><a traget="_blank" href="${obj.url}">${obj.url}</a><br></div>`;
+                        dvi += '<ul style="margin:0px">'+stable+'</ul><br><b>SourceURL</b><br><a traget="_blank" href="'+obj.url+'">'+obj.url+'</a><br></div>';
                     }                 
-                    textable += `<tr>${str}<tr>`;
+                    textable += '<tr>'+str+'<tr>';
                     $("#modal").append(dvi);
                 }
                 $("#tab").html(textable);

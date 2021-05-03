@@ -25,21 +25,21 @@
                 let thead = "", tbody = "";
                 for(let i = 0; i < data.length; i++ ){
                     let obj = data[i];
-                    thead += `<th>${obj.dataset}</th>`;
+                    thead += '<th>'+obj.dataset+'</th>';
                 }
                 let tmp = data[0].result;
                 for(let j = 0; j < tmp.length; j++ ){
-                    let row = `<td><a class="simptip-position-top simptip-smooth" data-tooltip="${tmp[j].algo}" style="cursor:pointer">${tmp[j].short}</a></td><td style="background-color:#${color[j]}a8">${tmp[j].rank}</td>`;
+                    let row = '<td><span class="simptip-position-top simptip-smooth" data-tooltip="'+tmp[j].algo+'" style="cursor:pointer;color:#FC7E0F">'+tmp[j].short+'</span></td><td style="background-color:#'+color[j]+'a8">'+tmp[j].rank+'</td>';
                     for(let k = 0; k < data.length; k++ ){
                         if(data[k].result[j].extra!=""){
-                            row += `<td><a style="cursor:pointer" class="simptip-position-top simptip-smooth" data-tooltip="${data[k].result[j].extra}">${data[k].result[j].mark}</a></td>`;
+                            row += '<td><span style="cursor:pointer;color:#FC7E0F" class="simptip-position-top simptip-smooth" data-tooltip="'+data[k].result[j].extra+'">'+data[k].result[j].mark+'</span></td>';
                         }else{
-                            row += `<td>${data[k].result[j].mark}</td>`;
+                            row += '<td>'+data[k].result[j].mark+'</td>';
                         } 
                     }
-                     tbody += `<tr>${row}</tr>`;
+                     tbody += '<tr>'+row+'</tr>';
                 }
-                $("#thead").html(`<tr><th>Method</th><th>Rank*</th>${thead}</tr>`);
+                $("#thead").html('<tr><th>Method</th><th>Rank*</th>'+thead+'</tr>');
                 $("#tbody").html(tbody);
             })
         })

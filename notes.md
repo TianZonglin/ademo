@@ -29,6 +29,6 @@ Well, the problem is the mismatching format of videos, I have know that videos w
 
 So, this could be a guide for us that if we want to show videos in multiple browser, we'd better to make sure that vidos format are H.264/AVC.
 
-I have convert all videos formats to H.264 and now they can work well with Firefox and Safari.
+I have convert all videos formats to H.264 and tested Safari 12, Opera 67 and Firefox on Mac OSX 10.14, now they can work well with them.
 
 I think IE now is not a recommand browser for most cases, and Microsoft is abandoning this project now, so I just added a warning message when users use IE to visit. 
