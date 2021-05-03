@@ -665,7 +665,7 @@
         "short": "NPE",
         "rank": "22",
         "mark": "√",
-        "extra": "Z: can't see anything; G: See the screenshot folder. explanation is bad but visible when using the discreet setting. Z: Got it"
+        "extra": "See the screenshot folder. explanation is bad but visible when using the discreet setting."
     },{ 
         "algo": "Metric MDS",
         "short": "MDS",

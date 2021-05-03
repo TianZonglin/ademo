@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simptip@1.0.4/simptip.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="//api.html5media.info/1.2.2/html5media.min.js"></script>
     <script> 
         $(function() {
             $.getJSON("explanations.json",function(data){  
@@ -38,7 +39,7 @@
                                 let dld = arr[subi+1].replace("repo1\\","repo1\\raw\\main\\").replace("repo2\\","repo2\\raw\\main\\");
                                 str1 +=`<td align="center" class="2D" data-src="${imghref+arr[subi]}">`
                                       +`<div id="${idi}" class="modal" style="text-align:center;max-width: 80% !important;min-width: 900px !important;">`
-                                      +`<b>Comparison View (left:2D, right:3D)</b><br><a download="${arr[subi+1]}" style="font-size:15px;color:#FC7E0F" href="${"https://github.com/TianZonglin/"+dld}">download video</a><br><br>`
+                                      +`<b>Comparison View (left:2D, right:3D)</b><br><a download="${arr[subi+1]}" style="font-size:15px;color:#FC7E0F" href="${"https://github.com/TianZonglin/"+dld}">download this video</a><br><br>`
                                       +`<img style="border:solid 1px;height:${wid*2.5}px" alt="" title="" src="${imghref+arr[subi]}">&nbsp;&nbsp;&nbsp;`
                                       +`<video height="${wid*2.5}" style="border:solid 1px;" controls loop><source src="${imghref+arr[subi+1]}" type="video/mp4">Your browser does not support the video tag.</video><br><br></div>`
                                       +`<a href="#${idi}" rel="modal:open"><img style="margin-top:15px;width:${wid}px" alt="" title="" src="${imghref+arr[subi]}"></a></td>`;
@@ -119,7 +120,8 @@
                 <h3 class="post-title">Explanations of projections for all datasets (2D & 3D)</h3>
             </header>
             <section class="post-content">
-                <p><a>&nbsp;S = Splat Radius, R = Neighborhood Size</a></p>
+                We recommend a recent version of Chrome to play the videos. Alternatively, you can download all videos and play them locally<br>
+                <span style="color:#FC7E0F">Note: S = Splat Radius, R = Neighborhood Size</span>
                 <table>
                     <thead><tr>
                         <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/-.svg"/></th>
@@ -173,7 +175,7 @@
         </article>
     </main>
     <footer class="site-footer">
-        <a target="_blank" style="text-decoration:none;" href="https://vig.science.uu.nl/">UU & VIG</a>
+        <a target="_blank" style="text-decoration:none;" href="https://vig.science.uu.nl/">UU & VIG</a><br>
     </footer>
 </body>
 </html>
