@@ -8,6 +8,7 @@
     <title>
         Datasets - Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
     </title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/ProjectExplain.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.loli.net/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700"/>
@@ -20,7 +21,37 @@
         }
     </style>
     <script>
+        $("#heady").html("");
         $(function() {
+            function IECheck(){
+                var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+                var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+                var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+                var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1; //判断是否IE11浏览器
+                if(isIE) {
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                    reIE.test(userAgent);
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+                    if(fIEVersion == 7) {
+                        return 7;
+                    } else if(fIEVersion == 8) {
+                        return 8;
+                    } else if(fIEVersion == 9) {
+                        return 9;
+                    } else if(fIEVersion == 10) {
+                        return 10;
+                    } else {
+                        return 6;//IE版本<=7
+                    }   
+                }else{
+                    return -1;//不是ie浏览器
+                }
+            }
+            if(IECheck()!=-1){
+                
+            }else{
+                $("#heady").html("");
+            }
             $.getJSON("datasets.json",function(data){ 
                 //https://cdn.jsdelivr.net/gh/TianZonglin/user-study-mdpi-repo2/gallery/datasets.json
                 console.log(data);
@@ -94,6 +125,10 @@
                 <h3 class="post-title">Datasets</h3>
             </header>
             <section class="post-content">
+                <div id="heady">
+                    <span style='color:red'>Warning: You are using a low version of IE. The website requires IE11+ to run, we strongly recommend using a recent version of Chrome, Safari, Edge, or Firfox to visit this page.</span>
+                
+                </div>
                 <h5 id="individual-datasets">Individual datasets</h5>
                 <div id="modal"> </div>
                 <table style="font-size:16px">

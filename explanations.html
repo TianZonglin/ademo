@@ -8,6 +8,7 @@
     <title>
         Explanations - Quantitative and Qualitative Comparison of 2D and 3D Projection Techniques for High-Dimensional Data
     </title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/ProjectExplain.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/TianZonglin/proj-quant-eval/site/public/assets/css/screen.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.loli.net/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700"/>
@@ -17,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="//api.html5media.info/1.2.2/html5media.min.js"></script>
     <script> 
-
+        $("#heady").html();
         $(function() {
             function IECheck(){
                 var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
@@ -39,20 +40,19 @@
                     } else {
                         return 6;//IE版本<=7
                     }   
-                } else if(isIE11) {
-                    return 11; //IE11  
                 }else{
                     return -1;//不是ie浏览器
                 }
             }
             if(IECheck()!=-1){
                 $(".icon").css("margin-left","2px !important")
+            }else{
+                $("#heady").html("We use a free CDN service to host the videos, if they can't be played in your browser, then you can download all videos and play them locally.<br><span style='color:#FC7E0F'>Note: S = Splat Radius, R = Neighborhood Size</span>");
             }
-            console.log(IECheck());
             $.getJSON("explanations.json",function(data){  
                 //https://cdn.jsdelivr.net/gh/TianZonglin/user-study-mdpi-repo2/gallery/explanations.json
                 function makeup(tname){
-                    let arr = eval('data.'+tname);
+                    let arr = data[tname];
                     let rows = Math.ceil(arr.length/(5*2));
                     let tableset = "";
                     for(let line = 0; line < rows; line++ ){
@@ -151,9 +151,10 @@
             </header>
             <section class="post-content">
                 <div id="heady">
-                We use a free CDN service to host the videos, if they can't be played in your browser, then you can download all videos and play them locally.<br>
+                    <span style='color:red'>Warning: You are using a low version of IE. The website requires IE11+ to run, we strongly recommend using a recent version of Chrome, Safari, Edge, or Firfox to visit this page.</span><br>
+                
                 </div>
-                <span style="color:#FC7E0F">Note: S = Splat Radius, R = Neighborhood Size</span>
+                
                 <table>
                     <thead><tr>
                         <th align="center">CityPollution &nbsp;<img class="icon" count="false" src="https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/img/20210504004141.png"/></th>
