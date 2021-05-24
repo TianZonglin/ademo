@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="https://threejs.org/build/three.js"></script>
+		<script>
+            // define a scene and renderer
+			const scene = new THREE.Scene();
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            document.body.appendChild( renderer.domElement );
+
+            // define a camera
+            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 500 );
+			camera.position.set( 0, 0, 15 ); // camera.position.z = 15
+			camera.lookAt( 0, 0, 0 );
+
+            // define a geometry and material
+            const points = [];
+			points.push( new THREE.Vector3( - 10, 0, 0 ) );
+			points.push( new THREE.Vector3( 0, 10, 0 ) );
+			points.push( new THREE.Vector3( 10, 0, 0 ) );
+			// the connection is not close
+			const geometry = new THREE.BufferGeometry().setFromPoints( points );
+
+            const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+            const line  = new THREE.Line( geometry, material );
+            scene.add( line  );
+
+            // define the animation
+			const animate = function () {
+				requestAnimationFrame( animate );
+                // movement
+				line.rotation.y += .01;
+
+				renderer.render( scene, camera );
+			};
+
+			animate();
+		</script>
+
+	</body>
+
+</html>

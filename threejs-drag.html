@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script type="module">
+
+			import * as THREE from '../build/three.module.js';
+
+			import { OrbitControls } from '../examples/jsm/controls/OrbitControls.js';
+            // define a scene and renderer
+			const scene = new THREE.Scene();
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            document.body.appendChild( renderer.domElement );
+
+            // define a camera
+            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            const controls = new OrbitControls( camera, renderer.domElement );
+
+			//controls.update() must be called after any manual changes to the camera's transform
+			camera.position.set( 0, 20, 100 );
+			controls.update();
+
+
+
+            // define a geometry and material
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+            const cube = new THREE.Mesh( geometry, material );
+            scene.add( cube );
+
+ 
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				// required if controls.enableDamping or controls.autoRotate are set to true
+				controls.update();
+
+				renderer.render( scene, camera );
+
+				}
+			animate();
+		</script>
+
+	</body>
+
+</html>
